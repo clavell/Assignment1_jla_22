@@ -21,7 +21,7 @@ public class VehicleController_jla_22 {
 	public String newProfile(ModelMap model) {
 		Car_jla_22 car = new Car_jla_22();
 		model.addAttribute("car", car);
-		return "Assignment1View";
+		return "Assignment1View_jla_22";
 	}
 
 	/*
@@ -32,11 +32,11 @@ public class VehicleController_jla_22 {
 	public String saveProfile(Car_jla_22 car, BindingResult result, ModelMap model) {
 
 		if (result.hasErrors()) {
-			return "Assignment1View";
+			return "Assignment1View_jla_22";
 		}
 //		model.addAttribute("successMessage", "Dear " + em.getFirstName() + " , your profile completed successfully");
 		model.addAttribute("car", car);
-		return "Assignment1Success";
+		return "Assignment1Success_jla_22";
 	}
 
 //	/*
