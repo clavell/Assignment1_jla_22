@@ -12,24 +12,12 @@ public class Vehicle_jla_22 implements Serializable, Constants{
 	
 	//looks like we might need this
 	private static final long serialVersionUID = 1L;
-	private Date purchaseDate;
 	private Date lastMaintenanceDate;
 	private Problems problem;
+	private double tripDistance;
 		
 	
-	/**
-	 * @return the purchaseDate
-	 */
-	public Date getPurchaseDate() {
-		return purchaseDate;
-	}
-	/**
-	 * @param purchaseDate the purchaseDate to set
-	 */
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	public void setPurchaseDate(Date purchaseDate) {
-		this.purchaseDate = purchaseDate;
-	}
+	
 	/**
 	 * @return the lastMaintenanceDate
 	 */
@@ -41,6 +29,7 @@ public class Vehicle_jla_22 implements Serializable, Constants{
 	 */
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	public void setLastMaintenanceDate(Date lastMaintenanceDate) {
+		
 		this.lastMaintenanceDate = lastMaintenanceDate;
 	}
 	/**
@@ -49,10 +38,30 @@ public class Vehicle_jla_22 implements Serializable, Constants{
 	public Problems getProblem() {
 		return problem;
 	}
+	
+	public String problemToString() {
+		return problem.toString();
+	}
 	/**
 	 * @param problem the problem to set
 	 */
-	public void setProblem(Problems problem) {
-		this.problem = problem;
+	public void setProblem(String problem) {
+		switch(problem) {
+		case "brokenEngine":
+			this.problem = Problems.brokenEngine;
+		break;
+		case "scratchedPaint":
+			this.problem = Problems.scratchedPaint;
+			break;
+		case "flatTire":
+			this.problem = Problems.flatTire;
+			break;
+		}
+	}
+	public double getTripDistance() {
+		return tripDistance;
+	}
+	public void setTripDistance(double tripDistance) {
+		this.tripDistance = tripDistance;
 	}
 }
